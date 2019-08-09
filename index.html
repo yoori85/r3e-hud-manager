@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<iframe id="HUD" frameborder="0" scrolling="no" onload="resizeIframe(this)" src=""></iframe>
+
+<script>
+
+ if (typeof(Storage) !== "undefined") {
+    if (!localStorage.url) {
+      localStorage.url = "https://otterhud.github.io/";
+    } else {
+      
+    }
+    document.getElementById("HUD").src = localStorage.url
+  } else {
+    document.getElementById("HUD").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+
+</script>
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+    obj.style.width = obj.contentWindow.document.body.scrollWidth + 'px';
+  }
+</script>
+
+</body>
+</html>
